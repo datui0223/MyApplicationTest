@@ -10,7 +10,10 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.lz.myapplication.MyApplication;
 
 /**
@@ -22,6 +25,7 @@ public class ImageController extends BaseControllerListener<ImageInfo>{
     private Context context;
     private Uri uri;
     private DraweeController controller;
+    private ImageRequest imageRequest;
 
     public ImageController(SimpleDraweeView simpleDraweeView, Context context,Uri uri) {
         this.simpleDraweeView = simpleDraweeView;
@@ -30,8 +34,12 @@ public class ImageController extends BaseControllerListener<ImageInfo>{
     }
 
     public DraweeController getDraweeController(){
+        imageRequest = ImageRequestBuilder.newBuilderWithSource(uri)
+                .setAutoRotateEnabled(true)
+                .build();
         controller = Fresco.newDraweeControllerBuilder()
                 .setControllerListener(this)
+                .setImageRequest(imageRequest)
                 .setUri(uri)
                 .build();
         return controller;

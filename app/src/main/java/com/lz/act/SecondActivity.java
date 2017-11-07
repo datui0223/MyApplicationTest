@@ -74,7 +74,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         ButterKnife.bind(this);
-        Uri uri = Uri.parse("http://pic.58pic.com/58pic/13/66/58/20258PICpDh_1024.png");
+        Uri uri = Uri.parse("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3269472497,1121738826&fm=27&gp=0.jpg");
         Uri uri1 = Uri.parse("http://mpic.tiankong.com/935/cce/935cce5611ee35530947666ef1201206/640.jpg");
         Uri uri2 = Uri.parse("http://mpic.tiankong.com/e05/aac/e05aac559997cbdab5666ef4d49af70e/640.jpg");
         Uri uri3 = Uri.parse("http://mpic.tiankong.com/f9f/419/f9f4194cb05d1334f42b1650585c2250/640.jpg");
@@ -95,7 +95,6 @@ public class SecondActivity extends AppCompatActivity {
         iv_show4.setController(imageController4.getDraweeController());
         iv_show5.setController(imageController5.getDraweeController());
         iv_show6.setController(imageController6.getDraweeController());
-//        iv_show.setImageURI(uri);
     }
 
 

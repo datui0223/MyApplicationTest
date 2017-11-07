@@ -1,6 +1,7 @@
 package com.lz.myapplication;
 
 import android.app.Application;
+import android.util.DisplayMetrics;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.lz.dao.DaoMaster;
@@ -15,12 +16,19 @@ public class MyApplication extends Application{
 
     public static DaoSession daoSession;
 
+    // 当前屏幕的高宽
+    public static int screenW = 0;
+    public static int screenH = 0;
     private static MyApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
         getDaoSession();
         Fresco.initialize(this);
+        // 得到屏幕的宽度和高度
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        screenW = dm.widthPixels;
+        screenH = dm.heightPixels;
     }
 
     // 单例模式中获取唯一的MyApplication实例

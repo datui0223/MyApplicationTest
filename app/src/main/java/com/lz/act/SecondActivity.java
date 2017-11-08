@@ -74,6 +74,9 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         ButterKnife.bind(this);
+        if(getIntent().getStringExtra("flag1")!=null&&!"".equalsIgnoreCase(getIntent().getStringExtra("flag1"))){
+            tv_go.setText(getIntent().getStringExtra("flag1"));
+        }
         Uri uri = Uri.parse("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3269472497,1121738826&fm=27&gp=0.jpg");
         Uri uri1 = Uri.parse("http://mpic.tiankong.com/935/cce/935cce5611ee35530947666ef1201206/640.jpg");
         Uri uri2 = Uri.parse("http://mpic.tiankong.com/e05/aac/e05aac559997cbdab5666ef4d49af70e/640.jpg");

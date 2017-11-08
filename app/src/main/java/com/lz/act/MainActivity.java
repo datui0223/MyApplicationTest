@@ -78,12 +78,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_find_all.setOnClickListener(this);
         bt_ok.setOnClickListener(this);
         bt_ok.setOnClickListener(this);
-//        tv_go.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this,SecondActivity.class).putExtra("flag1","test"));
-//            }
-//        });
+        tv_go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SecondActivity.class)
+                        .putExtra("flag1","test")
+                );
+            }
+        });
         userDao = MyApplication.getInstance().getDaoSession().getUserDao();
         memberInfoDao = MyApplication.getInstance().getDaoSession().getMemberInfoDao();
 
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     break;
                 case R.id.bt_ok:
-                    startActivity(new Intent(MainActivity.this,SecondActivity.class));
+                    startActivity(new Intent(MainActivity.this,SecondActivity.class).putExtra("flag1","null"));
                     break;
                 case R.id.bt_addId:
                     User user2 = new User();

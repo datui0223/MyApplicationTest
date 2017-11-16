@@ -27,6 +27,7 @@ public class DaoMaster extends AbstractDaoMaster {
         OrderByProductDao.createTable(db, ifNotExists);
         ProductTableDao.createTable(db, ifNotExists);
         UserDao.createTable(db, ifNotExists);
+        FileInfoDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
@@ -37,6 +38,7 @@ public class DaoMaster extends AbstractDaoMaster {
         OrderByProductDao.dropTable(db, ifExists);
         ProductTableDao.dropTable(db, ifExists);
         UserDao.dropTable(db, ifExists);
+        FileInfoDao.dropTable(db, ifExists);
     }
 
     /**
@@ -61,6 +63,7 @@ public class DaoMaster extends AbstractDaoMaster {
         registerDaoClass(OrderByProductDao.class);
         registerDaoClass(ProductTableDao.class);
         registerDaoClass(UserDao.class);
+        registerDaoClass(FileInfoDao.class);
     }
 
     public DaoSession newSession() {

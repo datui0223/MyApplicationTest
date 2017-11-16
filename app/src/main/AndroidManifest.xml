@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.lz.act.SecondActivity"></activity>
+        <activity android:name="com.lz.act.DownLoadAct"></activity>
     </application>
 
 </manifest>

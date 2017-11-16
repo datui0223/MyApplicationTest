@@ -58,6 +58,8 @@ public class ImageController extends BaseControllerListener<ImageInfo>{
         ViewGroup.LayoutParams viewGroup = simpleDraweeView.getLayoutParams();
         viewGroup.height = imageInfo.getHeight()*MyApplication.getInstance().screenW/imageInfo.getWidth();
         viewGroup.width = MyApplication.getInstance().screenW;
+//        viewGroup.height = DisplayUtil.px2dip(context,imageInfo.getHeight());
+//        viewGroup.width = DisplayUtil.px2dip(context,imageInfo.getWidth());
         simpleDraweeView.setLayoutParams(viewGroup);
     }
 

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lz.base.BaseActivity;
 import com.lz.bean.MemberInfo;
 import com.lz.bean.User;
 import com.lz.dao.MemberInfoDao;
@@ -22,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.tv_go)
     TextView tv_go;
     @BindView(R.id.bt_add)
@@ -59,10 +60,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MemberInfoDao memberInfoDao;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    protected int setLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initParams() {
         tv_go.setMovementMethod(new ScrollingMovementMethod());
         bt_toone.setOnClickListener(this);
         bt_tomany.setOnClickListener(this);
@@ -88,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         userDao = MyApplication.getInstance().getDaoSession().getUserDao();
         memberInfoDao = MyApplication.getInstance().getDaoSession().getMemberInfoDao();
-
     }
 
     int tableFlag = 1;//1一对一，2一对多，3,多对多

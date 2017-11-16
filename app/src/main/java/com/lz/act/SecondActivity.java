@@ -1,9 +1,11 @@
 package com.lz.act;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -12,17 +14,19 @@ import android.widget.TextView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.lz.base.BaseActivity;
 import com.lz.myapplication.R;
 import com.lz.utils.ImageController;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by DELL on 2017/11/2.
  */
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
     @BindView(R.id.tv_go)
     TextView tv_go;
     @BindView(R.id.bt_add)
@@ -70,10 +74,12 @@ public class SecondActivity extends AppCompatActivity {
     SimpleDraweeView iv_show6;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        ButterKnife.bind(this);
+    protected int setLayoutId() {
+        return R.layout.activity_second;
+    }
+
+    @Override
+    protected void initParams() {
         if(getIntent().getStringExtra("flag1")!=null&&!"".equalsIgnoreCase(getIntent().getStringExtra("flag1"))){
             tv_go.setText(getIntent().getStringExtra("flag1"));
         }
@@ -101,24 +107,18 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-//    @OnClick(R.id.tv_go)
-//    public void onClick(View view){
-//        switch (view.getId()){
-//            case R.id.bt_add:
-//
-//                break;
-//            case R.id.bt_ok:
-//
-//                break;
-//            case R.id.bt_del:
-//
-//                break;
-//            case R.id.bt_find:
-//
-//                break;
-//            default:
-//
-//                break;
-//        }
-//    }
+    @OnClick({R.id.bt_go,R.id.bt_add})
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.bt_add:
+
+                break;
+            case R.id.bt_go:
+                startActivity(new Intent(SecondActivity.this,DownLoadAct.class));
+                break;
+            default:
+
+                break;
+        }
+    }
 }

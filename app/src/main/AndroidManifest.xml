@@ -3,6 +3,7 @@
     package="com.lz.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -20,6 +21,7 @@
         </activity>
         <activity android:name="com.lz.act.SecondActivity"></activity>
         <activity android:name="com.lz.act.DownLoadAct"></activity>
+        <service android:name="com.lz.service.DownLoadService"></service>
     </application>
 
 </manifest>

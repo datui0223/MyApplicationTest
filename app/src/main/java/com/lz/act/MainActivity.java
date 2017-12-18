@@ -1,8 +1,6 @@
 package com.lz.act;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lz.base.BaseActivity;
-import com.lz.bean.MemberInfo;
-import com.lz.bean.User;
+import com.lz.sqlbean.MemberInfo;
+import com.lz.sqlbean.User;
 import com.lz.dao.MemberInfoDao;
 import com.lz.dao.UserDao;
 import com.lz.myapplication.MyApplication;
@@ -21,7 +19,6 @@ import com.lz.myapplication.R;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.tv_go)

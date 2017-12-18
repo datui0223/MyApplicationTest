@@ -3,8 +3,6 @@ package com.lz.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.lz.bean.MemberInfo;
-
 import org.greenrobot.greendao.database.Database;
 
 /**

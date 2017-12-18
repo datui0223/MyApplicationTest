@@ -1,4 +1,4 @@
-package com.lz.bean;
+package com.lz.sqlbean;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;

@@ -1,6 +1,11 @@
 package com.lz.myapplication;
 
+import android.Manifest;
 import android.app.Application;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -30,6 +35,7 @@ public class MyApplication extends Application{
         screenW = dm.widthPixels;
         screenH = dm.heightPixels;
     }
+
 
     // 单例模式中获取唯一的MyApplication实例
     public static MyApplication getInstance() {

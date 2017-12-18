@@ -1,4 +1,4 @@
-package com.lz.bean;
+package com.lz.sqlbean;
 
 
 import com.lz.dao.BigDecimalConverter;

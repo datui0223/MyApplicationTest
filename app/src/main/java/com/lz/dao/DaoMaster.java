@@ -21,24 +21,24 @@ public class DaoMaster extends AbstractDaoMaster {
 
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
+        FileInfoDao.createTable(db, ifNotExists);
         InvestTableDao.createTable(db, ifNotExists);
         MemberInfoDao.createTable(db, ifNotExists);
         OrderDao.createTable(db, ifNotExists);
         OrderByProductDao.createTable(db, ifNotExists);
         ProductTableDao.createTable(db, ifNotExists);
         UserDao.createTable(db, ifNotExists);
-        FileInfoDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
+        FileInfoDao.dropTable(db, ifExists);
         InvestTableDao.dropTable(db, ifExists);
         MemberInfoDao.dropTable(db, ifExists);
         OrderDao.dropTable(db, ifExists);
         OrderByProductDao.dropTable(db, ifExists);
         ProductTableDao.dropTable(db, ifExists);
         UserDao.dropTable(db, ifExists);
-        FileInfoDao.dropTable(db, ifExists);
     }
 
     /**
@@ -57,13 +57,13 @@ public class DaoMaster extends AbstractDaoMaster {
 
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
+        registerDaoClass(FileInfoDao.class);
         registerDaoClass(InvestTableDao.class);
         registerDaoClass(MemberInfoDao.class);
         registerDaoClass(OrderDao.class);
         registerDaoClass(OrderByProductDao.class);
         registerDaoClass(ProductTableDao.class);
         registerDaoClass(UserDao.class);
-        registerDaoClass(FileInfoDao.class);
     }
 
     public DaoSession newSession() {

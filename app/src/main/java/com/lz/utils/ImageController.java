@@ -18,6 +18,7 @@ import com.lz.myapplication.MyApplication;
 
 /**
  * Created by DELL on 2017/11/7.
+ * Fresco定制图片大小
  */
 
 public class ImageController extends BaseControllerListener<ImageInfo>{
@@ -26,11 +27,13 @@ public class ImageController extends BaseControllerListener<ImageInfo>{
     private Uri uri;
     private DraweeController controller;
     private ImageRequest imageRequest;
+    private int defaultWidth = 0;
 
-    public ImageController(SimpleDraweeView simpleDraweeView, Context context,Uri uri) {
+    public ImageController(SimpleDraweeView simpleDraweeView, Context context,Uri uri,int defaultWidth) {
         this.simpleDraweeView = simpleDraweeView;
         this.context = context;
         this.uri = uri;
+        this.defaultWidth = defaultWidth;
     }
 
     public DraweeController getDraweeController(){
@@ -56,8 +59,8 @@ public class ImageController extends BaseControllerListener<ImageInfo>{
             return;
         }
         ViewGroup.LayoutParams viewGroup = simpleDraweeView.getLayoutParams();
-        viewGroup.height = imageInfo.getHeight()*MyApplication.getInstance().screenW/imageInfo.getWidth();
-        viewGroup.width = MyApplication.getInstance().screenW;
+        viewGroup.height = imageInfo.getHeight()*(MyApplication.getInstance().screenW-defaultWidth)/imageInfo.getWidth();
+        viewGroup.width = MyApplication.getInstance().screenW-defaultWidth;
 //        viewGroup.height = DisplayUtil.px2dip(context,imageInfo.getHeight());
 //        viewGroup.width = DisplayUtil.px2dip(context,imageInfo.getWidth());
         simpleDraweeView.setLayoutParams(viewGroup);

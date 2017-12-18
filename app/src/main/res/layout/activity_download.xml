@@ -38,28 +38,28 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/bt_add"
+                        android:id="@+id/bt_download_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="下载" />
 
                     <Button
-                        android:id="@+id/bt_del"
+                        android:id="@+id/bt_download_more"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="下载全部" />
 
                     <Button
-                        android:id="@+id/bt_del_all"
+                        android:id="@+id/bt_stop_more"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="删除全部" />
+                        android:text="停止全部" />
 
                     <Button
-                        android:id="@+id/bt_update"
+                        android:id="@+id/bt_stop_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="删除" />
+                        android:text="停止" />
 
                 </LinearLayout>
 
